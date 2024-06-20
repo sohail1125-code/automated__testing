@@ -1,0 +1,50 @@
+import unittest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait from selenium.webdriver.support import expected_conditions as EC
+
+class TestTheSparks Foundation (unittest. TestCase):
+    def setUp(self):
+        self.driver = webdriver.Chrome('./chromedriver')
+
+
+    def test_home_page(self):
+        driver = self.driver
+        driver.get("https://thesparksfoundation.sg/") self.assertIn("The Sparks Foundation", driver.title) 
+        elem = driver.find_element_by_xpath("//img[@alt='The Sparks Foundation']")                          
+        self.assertTrue(elem.is_displayed())
+ 
+
+    def test_about_us_page(self):
+        driver self.driver
+        driver.get("https://thesparksfoundation.sg/about-us/") 
+        self.assertin ("About Us", driver.title) 
+        elum = driver.find_element_by_xpath("//h1[text()='About Us']") 
+        self.assertTrue(elem.is_displayed())
+
+
+    def test_programs_page(self): 
+        driver self.driver
+        driver.get("https://thesparksfoundation.sg/programs/") 
+        self.assertIn("Programs", driver.title)
+        elem = driver.find_element_by_xpath("//h1[text()='Programs']") 
+        self.assertTrue(elem.is_displayed())
+
+    def test_events_page(self):
+        driver self.driver driver.get("https://thesparksfoundation.sg/events/") 
+        self.assertIn("Events", driver.title)
+        elem = driver.find_element_by_xpath("//h1[text()='Events']")
+        self.assertTrue(elem.is_displayed())
+
+    def test_contact_us_page(self):
+        driver = self.driver driver.get("https://thesparksfoundation.sg/contact-us/") 
+        self.assertIn("Contact Us", driver.title)
+        elem = driver.find_element_by_xpath("//h1 [text() = 'Contact Us']")
+        self.assertTrue(elem.is_displayed())
+
+    def tearDown(selt):
+        self.driver.close()
+
+if __name__=="__main__";
+    unittest.main()
+        
